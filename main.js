@@ -1,6 +1,3 @@
-document.addEventListener( 'DOMContentLoaded', function() {
-    // your whole code 
-
 var cart = [];
 
 var dairyItems = [{
@@ -124,5 +121,3 @@ function addToCart(item) {
     </li>`);
     }
 }
-
-});
