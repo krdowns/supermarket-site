@@ -105,6 +105,7 @@ function populateItems(category) {
         }
 
         $('#items').append(categoryList);
+        console.log(categoryList);
     }
 
  
