@@ -63,6 +63,18 @@ var produceItems = [{
     }
 ];
 
+$('#dairy').click(function() {
+	populateItems('dairy');
+});
+
+$('#meat').click(function() {
+	populateItems('meat');
+});
+
+$('#produce').click(function() {
+	populateItems('produce');
+});
+
 // var dairyItems = document.getElementById('dairy').addEventListener('click', populateItems());
 
 // var meatItems= document.getElementById('meat').addEventListener('click', populateItems());
@@ -76,11 +88,11 @@ var produceItems = [{
 
 
 function populateItems(category) {
-    
+
     clearpopulateItems();
 
     var myItems;
-    switch(category) {
+    switch (category) {
         case 'dairy':
             myItems = dairyItems;
             break;
@@ -95,24 +107,23 @@ function populateItems(category) {
 
 
     var categoryList = document.querySelectorAll('ul');
-    for(var i = 0; i < myItems.length; i++) {
+    for (var i = 0; i < myItems.length; i++) {
         var currentItem = myItems[i];
         categoryList.append(
             `<li class='items'>
                 <img src='${currentItem.img}'>
                 <p>${currentItem.name}</p>
             </li>`);
-        }
-
-        $('#items').append(categoryList);
-        console.log(categoryList);
     }
 
- 
+    $('#items').append(categoryList);
+    console.log(categoryList);
+}
+
 
 function clearpopulateItems() {
     var items = document.getElementById('items')
-    while(items.firstChild) items.removeChild(items.firstChild);
+    while (items.firstChild) items.removeChild(items.firstChild);
 }
 
 function addToCart(item) {
@@ -120,6 +131,4 @@ function addToCart(item) {
     <li>
             ${item}
     </li>`);
-    }
-
-
+}
