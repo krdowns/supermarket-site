@@ -63,11 +63,11 @@ var produceItems = [{
     }
 ];
 
-var dairyItems = document.getElementById('dairy').addEventListener('click', populateItems);
+// var dairyItems = document.getElementById('dairy').addEventListener('click', populateItems());
 
-var meatItems= document.getElementById('meat').addEventListener('click', populateItems);
+// var meatItems= document.getElementById('meat').addEventListener('click', populateItems());
 
-var produceItems = document.getElementById('produce').addEventListener('click', populateItems);
+// var produceItems = document.getElementById('produce').addEventListener('click', populateItems());
 
 //-----------------ADD TO CART--------------//
 
@@ -96,17 +96,17 @@ function populateItems(category) {
 
     var categoryList = document.querySelectorAll('ul');
     for(var i = 0; i < myItems.length; i++) {
-        myItems[i].addEventListener('click', addCat);
-        function addCat() {categoryList.append(
+        var currentItem = myItems[i];
+        categoryList.append(
             `<li class='items'>
                 <img src='${currentItem.img}'>
                 <p>${currentItem.name}</p>
             </li>`);
         }
+
+        $('#items').append(categoryList);
     }
 
-
-    document.getElementById('items').append(categoryList);
  
 
 function clearpopulateItems() {
@@ -120,4 +120,5 @@ function addToCart(item) {
             ${item}
     </li>`);
     }
-}
+
+
